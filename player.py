@@ -15,6 +15,6 @@ class Player:
     def name(self, name):
         self._name = name
     
-    @name.setter
+    @name.score
     def score(self, score):
         self._score = score

@@ -1,10 +1,10 @@
 
 def checkLetters(letter, word):
-    dictio = {}
+    indexs = []
     listLetter = list(word)
     index = 0
     for templetter in listLetter:
         if letter in listLetter:
-            dictio[letter] = index
+            indexs.append(index)
         i+=1
-    return dictio
+    return indexs

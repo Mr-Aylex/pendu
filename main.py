@@ -7,13 +7,15 @@ import pygame
 import socket
 import sys
 from game import Game
-from tools.getword import getword
+from tools.getword import getword #Return a word from chosen theme as STR
+from tools.checkletter import checkLetters #Return list empty if chosen letter isn't in word, or indexs list if not empty
 # Press the green button in the gutter to run the script.
 if __name__ == '__main__':
     pygame.init()
 
     game = Game()
     game.run()
+    
 
 
 

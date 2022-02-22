@@ -1,9 +1,9 @@
 import requests
 import random
 
-def getword(myWord):
+def getword(theme):
     url = "https://twinword-word-graph-dictionary.p.rapidapi.com/theme/"
-    querystring = {"entry":myWord}
+    querystring = {"entry":theme}
 
     headers = {
         'x-rapidapi-host': "twinword-word-graph-dictionary.p.rapidapi.com",
@@ -14,8 +14,8 @@ def getword(myWord):
 
     data = response.json()
     try:
-        themes = data['theme']
-        theme = themes[random.randint(0, len(themes)-1)]
-        return theme
+        words = data['theme']
+        word = words[random.randint(0, len(words)-1)]
+        return word
     except:
         print('Unexpected response from api')

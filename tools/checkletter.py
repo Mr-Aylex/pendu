@@ -6,5 +6,5 @@ def checkLetters(letter, word):
     for templetter in listLetter:
         if letter in listLetter:
             indexs.append(index)
-        i+=1
+        index+=1
     return indexs

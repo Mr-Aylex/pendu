@@ -49,3 +49,14 @@ class Game:
     def nextStep(self):
         if self.step < 9:
             self.step = self.step + 1
+    
+    def displayWord(self, word):   
+        white = (255, 255, 255)
+        black = (0, 0, 0)
+        font = pygame.font.Font('freesansbold.ttf', 32)
+        text = font.render("word: " + word, True, white, black)
+        textRect = text.get_rect()
+        x = 400
+        y = 100
+        textRect.center = (x // 2, y // 2)
+        self.screen.blit(text, textRect)

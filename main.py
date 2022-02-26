@@ -3,20 +3,47 @@
 # Press Maj+F10 to execute it or replace it with your code.
 # Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
 
+from objects.word import Word
 import pygame
 import socket
 import sys
 from game import Game
 from tools.getword import getword #Return a word from chosen theme as STR
-from tools.checkletter import checkLetters #Return list empty if chosen letter isn't in word, or indexs list if not empty
-from tools.checkword import checkWord
 from tools.wordtodisplay import wordToDisplay
 # Press the green button in the gutter to run the script.
 if __name__ == '__main__':
     pygame.init()
     
-    game = Game()
-    game.run()
+    myword = Word("salut")
+    print(myword.actualWord)
+    myword.checkLetter('a')
+    myword.updateActualWord()
+    myword.checkLetter('z')
+    myword.updateActualWord()
+    print(myword.actualWord)
+    myword.checkLetter('u')
+    myword.checkLetter('o')
+    myword.updateActualWord()
+    print(myword.actualWord)
+    
+    isWin = myword.checkWord(myword.actualWord)
+    if isWin == True:
+        print("Victory !")
+    else:
+        print("Not win Yet !")
+    
+    myword.checkedLettersSuccess = ['s', 'a', 'l', 'u', 't']
+    myword.updateActualWord()
+    isWin = myword.checkWord(myword.actualWord)
+    if isWin == True:
+        print("Victory !")
+    else:
+        print("Not win Yet !")
+    
+    
+    
+    # game = Game()
+    # game.run()
     
 
 

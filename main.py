@@ -9,7 +9,6 @@ import socket
 import sys
 from game import Game
 from tools.getword import getword #Return a word from chosen theme as STR
-from tools.wordtodisplay import wordToDisplay
 # Press the green button in the gutter to run the script.
 if __name__ == '__main__':
     pygame.init()

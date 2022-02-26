@@ -48,9 +48,9 @@ class Word:
         word = self.baseWord
         for tempLetter in list(word):
             if letter == tempLetter:
-                self.checkedLettersSuccess.append(letter)
+                self.checkedLettersSuccess.append(letter.lower())
                 return True
-        self.checkedLettersNoSuccess.append(letter)
+        self.checkedLettersNoSuccess.append(letter.lower())
         return False
 
     def checkWord(self, wordTried):

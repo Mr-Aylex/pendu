@@ -1,17 +1,21 @@
 from ctypes import sizeof
+import random
 
+from cffi.backend_ctypes import unicode
 
 class Word:
-    def __init__(self, baseWord):
-        self.baseWord = baseWord.lower()
+    def __init__(self):
+        self.baseWord = self.setBaseWord()
+        print(self.baseWord)
         self.actualWord = self.baseWord
         self.checkedLettersSuccess = []
         self.checkedLettersNoSuccess = []
-    
+        self.checkedWordsNoSuccess = []
+
     @property
     def baseWord(self):
         return self._baseWord
-    
+
     @property
     def actualWord(self):
         return self._actualWord

@@ -13,36 +13,36 @@ from tools.getword import getword #Return a word from chosen theme as STR
 if __name__ == '__main__':
     pygame.init()
     
-    myword = Word("salut")
-    print(myword.actualWord)
-    myword.checkLetter('a')
-    myword.updateActualWord()
-    myword.checkLetter('z')
-    myword.updateActualWord()
-    print(myword.actualWord)
-    myword.checkLetter('u')
-    myword.checkLetter('o')
-    myword.updateActualWord()
-    print(myword.actualWord)
+    # myword = Word("salut")
+    # print(myword.actualWord)
+    # myword.checkLetter('a')
+    # myword.updateActualWord()
+    # myword.checkLetter('z')
+    # myword.updateActualWord()
+    # print(myword.actualWord)
+    # myword.checkLetter('u')
+    # myword.checkLetter('o')
+    # myword.updateActualWord()
+    # print(myword.actualWord)
+    #
+    # isWin = myword.checkWord(myword.actualWord)
+    # if isWin == True:
+    #     print("Victory !")
+    # else:
+    #     print("Not win Yet !")
+    #
+    # myword.checkedLettersSuccess = ['s', 'a', 'l', 'u', 't']
+    # myword.updateActualWord()
+    # isWin = myword.checkWord(myword.actualWord)
+    # if isWin == True:
+    #     print("Victory !")
+    # else:
+    #     print("Not win Yet !")
+    #
     
-    isWin = myword.checkWord(myword.actualWord)
-    if isWin == True:
-        print("Victory !")
-    else:
-        print("Not win Yet !")
     
-    myword.checkedLettersSuccess = ['s', 'a', 'l', 'u', 't']
-    myword.updateActualWord()
-    isWin = myword.checkWord(myword.actualWord)
-    if isWin == True:
-        print("Victory !")
-    else:
-        print("Not win Yet !")
-    
-    
-    
-    # game = Game()
-    # game.run()
+    game = Game()
+    game.run()
     
 
 

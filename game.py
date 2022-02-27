@@ -1,6 +1,6 @@
 import pygame_widgets
 import pygame
-import os
+import json
 from pygame_widgets.button import Button
 from pygame_widgets.dropdown import Dropdown
 from pygame_widgets.textbox import TextBox
@@ -8,6 +8,7 @@ from pygame_widgets.combobox import ComboBox
 from player import Player
 from objects.word import Word
 from objects.turn import Turn
+
 
 class Game:
     def __init__(self):
@@ -33,7 +34,7 @@ class Game:
 
         self.user_text = ''
         self.clock = pygame.time.Clock()
-        self.myword = Word()#anticonstitutionnellement
+        self.myword = Word()  # anticonstitutionnellement
         self.isWin = False
 
     def renderWords(self):
@@ -44,7 +45,7 @@ class Game:
                 self.screen,  # Surface to place button on
                 800,  # X-coordinate of top left corner
                 posY,  # Y-coordinate of top left corner
-                len(tempword)*15,  # Width
+                len(tempword) * 15,  # Width
                 30,  # Height
 
                 # Optional Parameters
@@ -55,9 +56,10 @@ class Game:
                 hoverColour=(150, 0, 0),  # Colour of button when being hovered over
                 pressedColour=(0, 200, 20),  # Colour of button when being clicked
                 radius=20,  # Radius of border corners (leave empty for not curved)
-                  # Function to call when clicked on
+                # Function to call when clicked on
             ))
-            posY+= 40
+            posY += 40
+
     def renderLetters(self):
         posY = 70
         btnListe = []
@@ -66,7 +68,7 @@ class Game:
                 self.screen,  # Surface to place button on
                 710,  # X-coordinate of top left corner
                 posY,  # Y-coordinate of top left corner
-                len(tempword)*15,  # Width
+                len(tempword) * 15,  # Width
                 30,  # Height
 
                 # Optional Parameters
@@ -77,9 +79,9 @@ class Game:
                 hoverColour=(150, 0, 0),  # Colour of button when being hovered over
                 pressedColour=(0, 200, 20),  # Colour of button when being clicked
                 radius=20,  # Radius of border corners (leave empty for not curved)
-                  # Function to call when clicked on
+                # Function to call when clicked on
             ))
-            posY+= 40
+            posY += 40
 
     def output(self):
         text = self.textbox.getText()
@@ -99,6 +101,9 @@ class Game:
                     print(self.myword.checkedWordsNoSuccess)
                 if not self.isWin:
                     self.nextStep()
+                else:
+                    self.tour.player.gamesWin += 1
+                    self.tour.player.UpdatePlayerStats()
             else:
                 if not self.myword.checkLetter(text):
                     print(self.myword.checkedLettersNoSuccess)

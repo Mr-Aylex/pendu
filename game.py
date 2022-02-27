@@ -194,10 +194,8 @@ class Game:
     def displayWord(self, words, x, y):
         white = (255, 255, 255)
         black = (0, 0, 0)
-        font = pygame.font.Font('freesansbold.ttf', 32)
-        text = font.render("word: " + word, True, white, black)
+        font = pygame.font.Font('freesansbold.ttf', 20)
+        text = font.render(words, True, white, black)
         textRect = text.get_rect()
-        x = 400
-        y = 100
-        textRect.center = (x // 2, y // 2)
+        textRect.center = (x, y)
         self.screen.blit(text, textRect)

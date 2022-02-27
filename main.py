@@ -8,7 +8,10 @@ import pygame
 import socket
 import sys
 from game import Game
-from tools.getword import getword #Return a word from chosen theme as STR
+from player import Player
+
+from tools.getword import getword  # Return a word from chosen theme as STR
+
 # Press the green button in the gutter to run the script.
 if __name__ == '__main__':
     pygame.init()
@@ -39,13 +42,30 @@ if __name__ == '__main__':
     # else:
     #     print("Not win Yet !")
     #
-    
-    
+    # Player.addPlayerToStats("Ready Player One")
+    # Player.addPlayerToStats("Julie")
+    # Player.addPlayerToStats("Eliote")
+    # Player.addPlayerToStats("Sauron")
+    # Player.addPlayerToStats("Daenerys")
+    # Player.addPlayerToStats("Mario")
+    # Player.addPlayerToStats("Luigi")
+    # print(Player.listPlayers())
+    # print(type(Player.listPlayers()))
+    # print(Player.getPlayerStats("Mario"))
+
+    beauJoueur = Player()
+    beauJoueur.name = "Daenerys"
+    # print(beauJoueur.name)
+    # Player.addPlayerToStats(beauJoueur.name)
+    print(Player.listPlayers())
+    # beauJoueur.totalScore = 20
+    # beauJoueur.gamesWin = 7
+    # beauJoueur.UpdatePlayerStats()
+    # print(Player.listPlayers())
     game = Game()
-    game.run()
-    
-
-
+    players = game.start()
+    print(players)
+    game.run(players)
 
 
 # See PyCharm help at https://www.jetbrains.com/help/pycharm/

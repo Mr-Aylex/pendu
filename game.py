@@ -171,7 +171,6 @@ class Game:
             self.renderTitle("Letters:", 730, 30)
             pygame_widgets.update(events)
             pygame.display.update()
-            self.clock.tick(30)
         pygame.quit()
 
     def print_value(self):
